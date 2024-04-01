@@ -1,0 +1,306 @@
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.container {
+max-width:90%;
+margin:0 auto;
+border:1px solid black;
+padding:0 16px;
+}
+
+.navbar {
+display:flex;
+justify-content:space-between;
+padding:60px 0;
+}
+
+.navbar .right img {
+  width:24px;
+  height:24px;
+
+}
+.navbar .left {
+font-size:32px;
+font-weight:900;
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+position:relative;
+}
+
+.navbar .jasba {
+margin-left:22px;
+height:20px;
+padding:2px;
+width:59px;
+font-size:10px;
+background-color: #f4f5f6;
+border-radius:7px;
+box-shadow:0 1em 0.5em -0.5em #c0c0c0;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+letter-spacing:1px;
+}
+
+.navbar .right {
+width:400px;
+display:flex;
+justify-content:space-between;
+align-items:center; 
+}
+
+.navbar .right a {
+text-decoration:none;
+color:black;
+}
+.navbar .right a:hover {
+text-decoration:underline;
+color:black
+}
+.navbar .hamburger {
+  display:none;
+
+}
+
+.bar1,
+.bar2,
+.bar3{
+background-color: black;
+height:4px;
+width:36px;
+margin:3px;
+border-radius:10px;
+}
+
+.mobilenav {
+background-color: white;
+width:80px;
+height:100vh;
+display:flex; 
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:fixed; 
+z-index:2;
+top: 0;
+right:-160px;
+padding:16px;
+transition:transform 0.5s
+}
+
+.mobilenav a {
+ margin:16px; 
+  text-decoration:none;
+color:black;
+margin:16px 0;
+  font-weight:400px;
+}
+
+.mobilenav img {
+  width:24px;
+  height:24px;
+}
+
+.mobilenav a:hover {
+  text-decoration:underline;
+}
+.opendrawer {
+  transform:translateX(-160px);
+}
+
+.project-grid {
+display:grid;
+grid-template-areas:
+"eth eth alphabet"
+"eth eth traveler"
+"astro cube traveler"
+"cup insta insta"
+"cup insta insta"
+"foam foam dimensional"
+"foam foam dimensional";
+gap:16px;
+width:100%;
+
+}
+
+#eth {
+  grid-area: eth;
+}
+
+#alphabet {
+  grid-area:alphabet;
+}
+
+#traveler {
+  grid-area:traveler;
+}
+
+#astro {
+  grid-area:astro;
+}
+
+
+#cube {
+  grid-area:cube;
+}
+
+#cup {
+  grid-area:cup;
+}
+#insta {
+  grid-area:insta;
+}
+#foam {
+  grid-area:foam;
+}
+#dimensional {
+  grid-area:dimensional;
+}
+
+.project {
+  /* width:600px; */
+  position:relative;
+}
+
+.project img {
+width:100%;
+object-fit:cover;
+height:100%;
+}
+.project .overlay {
+position:absolute;
+top:0; 
+left:0;
+background-color: rgba(255,255,255,0.1);
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+margin: 0;
+font-size:36px;
+font-weight:900;
+letter-spacing:2px;
+opacity:0;
+transition:opacity 0.2s cursor 0.2x ease;
+}
+
+.project .overlay:hover {
+  opacity:1;
+  cursor:pointer;
+
+}
+.overlay.col {
+  color:white;
+}
+
+
+.footer {
+  text-align:center;
+  padding:64px;
+}
+@media only screen and (max-width:1100px){
+  .project-grid {
+    max-width:100%;
+    grid-template-areas: 
+    "eth eth "
+    "alphabet traveler"
+    "astro cube "
+    "insta insta"
+    "cup foam"
+    "dimensional dimensional"
+  }
+}
+@media only screen and (max-width:768px){
+.project-grid {
+  margin-top:100px;
+}
+.navbar {
+padding:16px 24px;
+box-sizing:border-box;
+position:fixed;
+top: 0;
+left:0;
+z-index:3;
+background-color: white;
+width:100%;
+
+}
+.navbar .hamburger {
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+}
+.navbar .right {
+  display:none;
+}
+.footer {
+font-size:14px;
+padding:32px;
+color:black;
+}
+.project-grid {
+  max-width:100%;
+  grid-template-areas: 
+  "eth eth "
+  "alphabet alphabet"
+  "traveler traveler"
+  "astro cube "
+  "insta insta"
+  "cup cup"
+  "foam foam"
+  "dimensional dimensional"
+  }
+  .project .overlay {
+    font-size:25px;
+  } 
+}
+
+.animatebar1 {
+  animation:flipbar1 1s;
+  animation-fill-mode:forwards;
+}
+.animatebar2 {
+  animation:fadebar2 1s ;
+  animation-fill-mode:forwards;
+}
+.animatebar3 {
+  animation:flipbar3 1s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes flipbar1 {
+from {
+  transform:rotate(0);
+}
+to {
+  transform:rotate(45deg) translate(4px, 10px);
+}
+}
+
+@keyframes fadebar2 {
+from {
+  transform:skewX(1);
+  opacity:1;
+  }
+  to {
+    transform:skewX(0);
+    opacity:0;
+  }
+}
+
+@keyframes flipbar3 {
+from {
+  transform:rotate(0);
+}
+to {
+  transform:rotate(-45deg) translate(4px, -10px);
+}
+}
