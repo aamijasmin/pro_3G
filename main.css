@@ -187,7 +187,7 @@ font-size:36px;
 font-weight:900;
 letter-spacing:2px;
 opacity:0;
-transition:opacity 0.2s cursor 0.2x ease;
+transition:opacity 0.2s cursor 0.2s ease;
 }
 
 .project .overlay:hover {
